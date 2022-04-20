@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NEXUS_CREDS = credentials('NexusArtifactoryLogin')
+        NEXUS_CREDS = credentials('nexus-deployer')
         NEXUS_USER = "$NEXUS_CREDS_USR"
         NEXUS_PASSWORD = "$NEXUS_CREDS_PSW"
       }
