@@ -7,4 +7,12 @@
       <password>${env.NEXUS_PASSWORD}</password>
     </server>
   </servers>
+   <mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://192.169.1.20:9072/repository/maven-central/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
 </settings>
