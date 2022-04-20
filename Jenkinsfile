@@ -5,6 +5,9 @@ pipeline {
         NEXUS_USER = "$NEXUS_CREDS_USR"
         NEXUS_PASSWORD = "$NEXUS_CREDS_PSW"
       }
+    tools{
+        M3 "maven"
+    }
     stages {
         stage ('Compile Stage') {
 
