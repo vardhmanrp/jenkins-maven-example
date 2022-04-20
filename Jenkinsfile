@@ -30,8 +30,6 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                    sh 'echo $NEXUS_USER'
-                    sh 'echo $NEXUS_PASSWORD'
                     sh 'mvn -s settings.xml deploy -DrepositoryId=nexus-releases'
                 
             }
