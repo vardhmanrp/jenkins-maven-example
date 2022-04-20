@@ -1,12 +1,16 @@
 pipeline {
     agent any
-
+    environment {
+        NEXUS_CREDS = credentials('NexusArtifactoryLogin')
+        NEXUS_USER = "$NEXUS_CREDS_USR"
+        NEXUS_PASSWORD = "$NEXUS_CREDS_PSW"
+      }
     stages {
         stage ('Compile Stage') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
+                    sh 'mvn -s settings.xml clean compile'
                 }
             }
         }
@@ -15,7 +19,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
+                    sh 'mvn -s settings.xml test'
                 }
             }
         }
@@ -24,7 +28,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
+                    sh 'mvn -s settings.xml deploy'
                 }
             }
         }
