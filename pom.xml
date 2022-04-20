@@ -57,15 +57,15 @@
 
     <repositories>
         <repository>
-            <id>myMavenRepo.read</id>
-            <url>https://mymavenrepo.com/repo/FN8PIshHk5uALNhkXbhs/</url>
+            <id>nexus</id>
+            <url>http://192.169.1.20:9072/repository/maven-central/</url>
         </repository>
     </repositories>
 
     <distributionManagement>
         <repository>
-            <id>myMavenRepo.write</id>
-            <url>https://mymavenrepo.com/repo/9Q8JoRpymi4UGK8HzbVq/</url>
+            <id>nexus</id>
+            <url>http://192.169.1.20:9072/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
