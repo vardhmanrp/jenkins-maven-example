@@ -31,7 +31,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 
-                    sh 'mvn -s settings.xml deploy -DrepositoryId=releases'
+                    sh 'mvn -s settings.xml deploy -DrepositoryId=nexus-releases'
                 
             }
         }
