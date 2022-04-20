@@ -67,6 +67,13 @@
             <id>nexus</id>
             <url>http://192.169.1.20:9072/repository/maven-releases/</url>
         </repository>
+       <snapshotRepository>
+               <id>nexus-releases</id>
+               <name>nexus release</name>
+               <url>http://192.169.1.20:9072/repository/maven-releases/</url>
+             </snapshotRepository>
     </distributionManagement>
+         
+
 
 </project>
