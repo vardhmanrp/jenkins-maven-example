@@ -12,27 +12,27 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                
                     sh 'mvn -s settings.xml clean compile'
-                }
+                
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                
                     sh 'mvn -s settings.xml test'
-                }
+                
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                
                     sh 'mvn -s settings.xml deploy'
-                }
+                
             }
         }
     }
